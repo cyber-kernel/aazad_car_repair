@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Page Not Found | Azad Car Repair Workshop Jaipur</title>
+  <meta name="description" content="The page you are looking for was not found. Contact Azad Car Repair Workshop for 24-hour car breakdown and repair service in Jaipur.">
+  <link rel="canonical" href="index.html">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <!-- Tailwind CSS & Config -->
+  <script src="assets/js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- JS Site Config & Components -->
+  <script src="assets/js/site-config.js"></script>
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body class="bg-surface text-bodyText flex flex-col min-h-screen">
+
+  <!-- Shared Header Injection -->
+  <div id="site-header"></div>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow flex items-center justify-center py-20 bg-gradient-to-b from-amber-500/10 via-surface to-surface border-b border-borderLine">
+    <div class="container-custom max-w-xl text-center space-y-6">
+
+      <span class="font-heading font-extrabold text-7xl sm:text-8xl text-accent block">404</span>
+      <h1 class="font-heading font-extrabold text-2xl sm:text-3xl text-ink">
+        Page Not Found
+      </h1>
+      <p class="text-bodyText text-sm sm:text-base leading-relaxed">
+        The page you are looking for may have been moved or does not exist. If you need immediate emergency car breakdown help in Jaipur, call our 24-hour line below.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <a href="tel:+919680654099" class="btn-shimmer w-full sm:w-auto px-6 py-3.5 rounded-xl bg-accent hover:bg-accent-hover text-white font-extrabold text-sm shadow-md">
+          Call 096806 54099 Now
+        </a>
+        <a href="index.html" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-surface border border-borderLine text-ink font-bold text-sm hover:border-accent">
+          Back to Homepage
+        </a>
+      </div>
+
+      <div class="pt-6 border-t border-borderLine text-xs text-bodyText font-semibold">
+        <span class="font-bold text-ink block mb-2">Quick Page Navigation:</span>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="index.html" class="hover:text-accent">Home</a>
+          <span>•</span>
+          <a href="services/index.html" class="hover:text-accent">Services</a>
+          <span>•</span>
+          <a href="about/index.html" class="hover:text-accent">About Us</a>
+          <span>•</span>
+          <a href="gallery/index.html" class="hover:text-accent">Gallery</a>
+          <span>•</span>
+          <a href="contact/index.html" class="hover:text-accent">Contact</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Shared Footer Injection -->
+  <div id="site-footer"></div>
+
+  <!-- Shared Component Invocations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.renderHeader) window.renderHeader("/");
+      if (window.renderFooter) window.renderFooter();
+      if (window.renderFloatingButtons) window.renderFloatingButtons("404");
+    });
+  </script>
+</body>
+</html>

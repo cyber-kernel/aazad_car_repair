@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F8FAFC" rx="16" />
+  <rect width="800" height="500" fill="none" stroke="#E2E8F0" stroke-width="4" rx="16" />
+
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.05">
+    <path d="M 0 50 L 800 50 M 0 100 L 800 100 M 0 150 L 800 150 M 0 200 L 800 200 M 0 250 L 800 250 M 0 300 L 800 300 M 0 350 L 800 350 M 0 400 L 800 400 M 0 450 L 800 450" stroke="#0F172A" stroke-width="2" />
+    <path d="M 100 0 L 100 500 M 200 0 L 200 500 M 300 0 L 300 500 M 400 0 L 400 500 M 500 0 L 500 500 M 600 0 L 600 500 M 700 0 L 700 500" stroke="#0F172A" stroke-width="2" />
+  </g>
+
+  <!-- Central Badge/Icon Container -->
+  <g transform="translate(250, 100)">
+    <rect x="0" y="0" width="300" height="200" rx="24" fill="#1E293B" />
+
+    <!-- Wrench & Car emblem -->
+    <path d="M 150 40 L 90 140 L 120 140 L 135 115 L 165 115 L 180 140 L 210 140 Z" fill="#DC2626" />
+    <path d="M 150 65 L 142 100 L 158 100 Z" fill="#1E293B" />
+
+    <!-- Spark / Lightning -->
+    <polygon points="210,40 230,40 200,80 220,80 180,120 195,90 175,90" fill="#F59E0B" />
+  </g>
+
+  <!-- Text Label -->
+  <text x="400" y="340" font-family="'Bricolage Grotesque', sans-serif" font-size="28" font-weight="800" fill="#0F172A" text-anchor="middle">AZAD CAR REPAIR WORKSHOP</text>
+  <text x="400" y="375" font-family="'Instrument Sans', sans-serif" font-size="16" font-weight="700" fill="#DC2626" text-anchor="middle" letter-spacing="2">JAIPUR · 24 HOUR SERVICE</text>
+  <text x="400" y="415" font-family="'Instrument Sans', sans-serif" font-size="14" font-weight="600" fill="#64748B" text-anchor="middle">Image Placeholder (Add your photo to assets/img/)</text>
+</svg>

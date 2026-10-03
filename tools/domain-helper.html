@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain Switch & Sitemap Generator | Azad Car Repair</title>
+  <script src="../assets/js/tailwind-config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../assets/js/site-config.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 p-8 max-w-4xl mx-auto font-sans space-y-8">
+
+  <div class="space-y-2 border-b pb-6">
+    <h1 class="text-3xl font-bold text-gray-900">Custom Domain &amp; Sitemap Helper Tool</h1>
+    <p class="text-sm text-gray-600">
+      Use this internal utility to generate absolute <code class="bg-gray-200 px-1 py-0.5 rounded">sitemap.xml</code> and <code class="bg-gray-200 px-1 py-0.5 rounded">robots.txt</code> files when launching your live domain.
+    </p>
+  </div>
+
+  <div class="p-4 bg-blue-50 border border-blue-200 rounded-xl space-y-2 text-sm text-blue-900">
+    <p class="font-bold">Current Domain Setting in site-config.js:</p>
+    <p id="current-domain-display" class="font-mono text-base font-semibold text-blue-700"></p>
+    <p class="text-xs text-blue-800">
+      To change this, edit <code class="font-mono font-bold">SITE.seo.domain</code> in <code class="font-mono font-bold">/assets/js/site-config.js</code> (e.g. <code class="font-mono font-bold">"https://azadcarrepair.in"</code>).
+    </p>
+  </div>
+
+  <!-- Sitemap Section -->
+  <div class="space-y-3 bg-white p-6 rounded-2xl border shadow-sm">
+    <div class="flex items-center justify-between">
+      <h2 class="text-xl font-bold text-gray-900">Generated sitemap.xml</h2>
+      <button id="copy-sitemap" class="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-bold hover:bg-blue-700">
+        Copy sitemap.xml Content
+      </button>
+    </div>
+    <textarea id="sitemap-output" rows="10" readonly class="w-full font-mono text-xs bg-gray-900 text-green-400 p-4 rounded-xl" aria-label="Sitemap Output"></textarea>
+  </div>
+
+  <!-- Robots Section -->
+  <div class="space-y-3 bg-white p-6 rounded-2xl border shadow-sm">
+    <div class="flex items-center justify-between">
+      <h2 class="text-xl font-bold text-gray-900">Generated robots.txt</h2>
+      <button id="copy-robots" class="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-bold hover:bg-blue-700">
+        Copy robots.txt Content
+      </button>
+    </div>
+    <textarea id="robots-output" rows="6" readonly class="w-full font-mono text-xs bg-gray-900 text-green-400 p-4 rounded-xl" aria-label="Robots Output"></textarea>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const cfgDomain = (window.SITE.seo.domain && window.SITE.seo.domain.trim() !== '') ? window.SITE.seo.domain.replace(/\/$/, '') : (window.location.origin && window.location.origin !== 'null' ? window.location.origin : 'https://azadcarrepair.in');
+      document.getElementById("current-domain-display").textContent = cfgDomain;
+
+      const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>${cfgDomain}/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${cfgDomain}/services/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${cfgDomain}/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${cfgDomain}/gallery/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>${cfgDomain}/contact/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>`;
+
+      const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: ${cfgDomain}/sitemap.xml`;
+
+      document.getElementById("sitemap-output").value = sitemapXml;
+      document.getElementById("robots-output").value = robotsTxt;
+
+      document.getElementById("copy-sitemap").addEventListener("click", () => {
+        navigator.clipboard.writeText(sitemapXml);
+        alert("sitemap.xml copied to clipboard!");
+      });
+
+      document.getElementById("copy-robots").addEventListener("click", () => {
+        navigator.clipboard.writeText(robotsTxt);
+        alert("robots.txt copied to clipboard!");
+      });
+    });
+  </script>
+</body>
+</html>

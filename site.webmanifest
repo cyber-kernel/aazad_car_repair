@@ -1,0 +1,16 @@
+{
+  "name": "Azad Car Repair Workshop",
+  "short_name": "Azad Car Repair",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "description": "24 Hour Car Breakdown & Repair Service in Jaipur",
+  "icons": [
+    {
+      "src": "/assets/img/logo-mark.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

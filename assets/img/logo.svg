@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="100%" height="100%">
+  <!-- Background transparent -->
+  <g id="emblem" transform="translate(10, 10)">
+    <!-- Outer Emblem Circle/Badge -->
+    <rect x="0" y="0" width="100" height="100" rx="24" fill="#1D4ED8" />
+
+    <!-- Wrench letter A shape in white -->
+    <path d="M 50 18 L 22 82 L 38 82 L 44 68 L 56 68 L 62 82 L 78 82 Z" fill="#FFFFFF" />
+    <path d="M 50 34 L 46 56 L 54 56 Z" fill="#1D4ED8" />
+
+    <!-- Car silhouette overlay -->
+    <path d="M 28 62 C 34 52, 66 52, 72 62 L 80 62 C 83 62, 85 65, 85 68 L 85 74 C 85 76, 83 78, 80 78 L 20 78 C 17 78, 15 76, 15 74 L 15 68 C 15 65, 17 62, 20 62 Z" fill="#14213D" />
+    <!-- Wheels -->
+    <circle cx="32" cy="78" r="7" fill="#FFFFFF" />
+    <circle cx="32" cy="78" r="4" fill="#F26A1B" />
+    <circle cx="68" cy="78" r="7" fill="#FFFFFF" />
+    <circle cx="68" cy="78" r="4" fill="#F26A1B" />
+
+    <!-- Orange Spark Accent -->
+    <polygon points="74,18 86,18 78,32 88,32 68,50 74,36 66,36" fill="#F26A1B" />
+  </g>
+
+  <!-- Text Wordmark -->
+  <g id="wordmark" transform="translate(128, 20)">
+    <text x="0" y="44" font-family="'Bricolage Grotesque', 'Arial Black', sans-serif" font-size="46" font-weight="800" fill="#14213D" letter-spacing="-1">AZAD</text>
+    <text x="0" y="70" font-family="'Instrument Sans', sans-serif" font-size="16" font-weight="800" fill="#F26A1B" letter-spacing="3">CAR REPAIR WORKSHOP</text>
+    <text x="0" y="90" font-family="'Instrument Sans', sans-serif" font-size="12" font-weight="600" fill="#44506A" letter-spacing="1">आजाद कार रिपेयर वर्कशॉप · JAIPUR</text>
+  </g>
+</svg>
