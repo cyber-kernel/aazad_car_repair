@@ -54,22 +54,22 @@ window.renderHeader = function(activePath = "/") {
   }).join("");
 
   headerEl.innerHTML = `
-    <!-- Top Thin Announcement Bar -->
-    <div class="bg-slate-100 border-b border-slate-200 py-2.5 px-4 text-xs sm:text-sm text-slate-700">
-      <div class="container-custom flex flex-wrap items-center justify-between gap-2">
-        <div class="flex items-center gap-3">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-extrabold border border-red-200">
+    <!-- Top Thin Announcement Bar (Mobile Clean Centered Alignment) -->
+    <div class="bg-slate-100 border-b border-slate-200 py-2 px-3 text-xs sm:text-sm text-slate-700">
+      <div class="container-custom flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-4 text-center sm:text-left">
+        <div class="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-100 text-red-700 text-[11px] sm:text-xs font-extrabold border border-red-200">
             <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
             ${window.SITE.business.hoursText}
           </span>
-          <span class="hidden md:inline-flex items-center gap-1.5 text-slate-900 font-extrabold">
-            ${getIconSvg("location-pin", "w-4 h-4 text-red-600")}
-            ${window.SITE.address.landmark}, ${window.SITE.address.area}
+          <span class="inline-flex items-center gap-1 text-slate-900 font-bold text-[11px] sm:text-xs">
+            ${getIconSvg("location-pin", "w-3.5 h-3.5 text-red-600 shrink-0")}
+            <span>${window.SITE.address.landmark}, ${window.SITE.address.area}</span>
           </span>
         </div>
-        <div class="flex items-center gap-4 ml-auto">
-          <a href="tel:${window.SITE.contact.phoneTel}" class="font-extrabold text-red-600 hover:text-red-700 flex items-center gap-1.5">
-            ${getIconSvg("phone", "w-4 h-4 text-red-600")}
+        <div class="flex items-center justify-center">
+          <a href="tel:${window.SITE.contact.phoneTel}" class="font-extrabold text-red-600 hover:text-red-700 flex items-center gap-1 text-xs sm:text-sm">
+            ${getIconSvg("phone", "w-3.5 h-3.5 text-red-600 shrink-0")}
             <span>Call: ${window.SITE.contact.phoneDisplay}</span>
           </a>
         </div>
@@ -116,48 +116,48 @@ window.renderHeader = function(activePath = "/") {
           ${getIconSvg("menu", "w-6 h-6 text-slate-900")}
         </button>
       </div>
+    </header>
 
-      <!-- Mobile Light Drawer Overlay & Panel -->
-      <div id="mobile-drawer" class="fixed inset-0 z-50 lg:hidden hidden" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-        <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity"></div>
-        <div class="fixed top-0 right-0 bottom-0 w-full max-w-xs bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
-          <div>
-            <div class="flex items-center justify-between pb-6 border-b border-slate-200">
-              <a href="${resolvePageLink('/')}" class="flex items-center gap-2">
-                <img src="${rootPrefix}logo.png" alt="${window.SITE.business.name}" class="h-10 w-auto" width="40" height="40" />
-                <span class="font-heading font-bold text-base text-slate-900">AZAD CAR REPAIR</span>
+    <!-- Mobile Navigation Drawer Overlay (Document-Level Overlay) -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 lg:hidden hidden" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity"></div>
+      <div class="fixed top-0 right-0 bottom-0 w-full max-w-xs bg-white shadow-2xl p-6 flex flex-col justify-between overflow-y-auto z-50 border-l border-slate-200">
+        <div>
+          <div class="flex items-center justify-between pb-6 border-b border-slate-200">
+            <a href="${resolvePageLink('/')}" class="flex items-center gap-2">
+              <img src="${rootPrefix}logo.png" alt="${window.SITE.business.name}" class="h-10 w-auto" width="40" height="40" />
+              <span class="font-heading font-extrabold text-base text-slate-900">AZAD CAR REPAIR</span>
+            </a>
+            <button id="mobile-drawer-close" type="button" aria-label="Close Navigation Menu" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+              ${getIconSvg("close-x", "w-6 h-6 text-slate-900")}
+            </button>
+          </div>
+          <nav class="flex flex-col gap-2.5 py-6" aria-label="Mobile Navigation Links">
+            ${window.SITE.navigation.map(item => `
+              <a href="${resolvePageLink(item.href)}" class="flex items-center justify-between px-4 py-3 rounded-xl font-extrabold text-slate-900 bg-slate-50 hover:bg-red-50 hover:text-red-600 transition-colors border border-slate-200">
+                <span>${item.label}</span>
+                ${getIconSvg("chevron-right", "w-4 h-4 text-slate-400")}
               </a>
-              <button id="mobile-drawer-close" type="button" aria-label="Close Navigation Menu" class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100">
-                ${getIconSvg("close-x", "w-6 h-6")}
-              </button>
-            </div>
-            <nav class="flex flex-col gap-2 py-6" aria-label="Mobile Navigation Links">
-              ${window.SITE.navigation.map(item => `
-                <a href="${resolvePageLink(item.href)}" class="flex items-center justify-between px-4 py-3 rounded-xl font-bold text-slate-900 hover:bg-red-50 hover:text-red-600 transition-colors">
-                  <span>${item.label}</span>
-                  ${getIconSvg("chevron-right", "w-4 h-4 text-slate-400")}
-                </a>
-              `).join("")}
-            </nav>
-          </div>
+            `).join("")}
+          </nav>
+        </div>
 
-          <!-- Drawer Action Buttons -->
-          <div class="pt-6 border-t border-slate-200 flex flex-col gap-3">
-            <a href="tel:${window.SITE.contact.phoneTel}" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-red-600 text-white font-extrabold text-base hover:bg-red-700 shadow-md">
-              ${getIconSvg("phone", "w-5 h-5 text-white")}
-              <span>Call 096806 54099</span>
-            </a>
-            <a href="https://wa.me/${window.SITE.contact.whatsappNumber}?text=${encodeURIComponent(window.SITE.contact.whatsappDefaultMessage)}" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-600 text-white font-extrabold text-base hover:opacity-90 shadow-md">
-              ${getIconSvg("whatsapp", "w-5 h-5 text-white")}
-              <span>WhatsApp Emergency Chat</span>
-            </a>
-            <p class="text-xs text-center text-slate-600 mt-2 font-semibold">
-              📍 Shop No 2, MI Road, near Natha Arts, Jaipur
-            </p>
-          </div>
+        <!-- Drawer Action Buttons -->
+        <div class="pt-6 border-t border-slate-200 flex flex-col gap-3">
+          <a href="tel:${window.SITE.contact.phoneTel}" class="btn-shimmer w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-red-600 text-white font-extrabold text-base shadow-md hover:bg-red-700">
+            ${getIconSvg("phone", "w-5 h-5 text-white")}
+            <span>Call 096806 54099</span>
+          </a>
+          <a href="https://wa.me/${window.SITE.contact.whatsappNumber}?text=${encodeURIComponent(window.SITE.contact.whatsappDefaultMessage)}" class="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-emerald-600 text-white font-extrabold text-base shadow-md hover:bg-emerald-700">
+            ${getIconSvg("whatsapp", "w-5 h-5 text-white")}
+            <span>WhatsApp Emergency Chat</span>
+          </a>
+          <p class="text-xs text-center text-slate-600 mt-2 font-extrabold">
+            📍 Shop No 2, MI Road, near Natha Arts, Jaipur
+          </p>
         </div>
       </div>
-    </header>
+    </div>
   `;
 };
 

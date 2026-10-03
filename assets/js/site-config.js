@@ -52,7 +52,7 @@ window.SITE = {
     state: "Rajasthan",
     pin: "302001",
     fullAddress: "Shop No 2, Mirza Ismail Rd, near Natha Arts, Pink City, Jaipur, Rajasthan 302001",
-    mapsUrl: "https://www.google.com/maps/place/Azad+Car+Repair+workshop/@26.9177539,75.8051532,17z",
+    mapsUrl: "https://www.google.com/maps/place/Azad+Car+Repair+workshop/@26.9177539,75.8051532,17z/data=!4m6!3m5!1s0x396db589d6035dd3:0x24432a126a8552df!8m2!3d26.9177539!4d75.8051532!16s%2Fg%2F11p77922sm?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D",
     mapsEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.518174092049!2d75.80257827632662!3d26.917758659145624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db3e472652b1b%3A0xb35a5ef062b3390c!2sAzad%20Car%20Repair%20workshop!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     lat: 26.9177539,
     lng: 75.8051532,
@@ -61,7 +61,7 @@ window.SITE = {
   },
 
   social: {
-    googleMapsReviewsUrl: "https://www.google.com/maps/place/Azad+Car+Repair+workshop/@26.9177539,75.8051532,17z",
+    googleMapsReviewsUrl: "https://www.google.com/maps/place/Azad+Car+Repair+workshop/@26.9177539,75.8051532,17z/data=!4m6!3m5!1s0x396db589d6035dd3:0x24432a126a8552df!8m2!3d26.9177539!4d75.8051532!16s%2Fg%2F11p77922sm?entry=ttu&g_ep=EgoyMDI2MDkzMC4wIKXMDSoASAFQAw%3D%3D",
     facebook: "",
     instagram: "",
     youtube: ""
